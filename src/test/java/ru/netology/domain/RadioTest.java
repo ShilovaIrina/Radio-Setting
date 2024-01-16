@@ -43,6 +43,59 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldMinusVolume() {
+        Radio change = new Radio();
+
+        change.setCurrentVolume(10);
+        change.MinusVolume();
+
+        int expected = 9;
+        int actual = change.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldMinusVolumeSecond() {
+        Radio change = new Radio();
+
+        change.setCurrentVolume(-1);
+        change.MinusVolume();
+
+        int expected = 0;
+        int actual = change.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldPlusVolume() {
+        Radio change = new Radio();
+
+        change.setCurrentVolume(20);
+        change.PlusVolume();
+
+        int expected = 21;
+        int actual = change.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldPlusVolumeSecond() {
+        Radio change = new Radio();
+
+        change.currentVolume = 101;
+        change.PlusVolume();
+
+        int expected = 101;
+        int actual = change.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldChoiceStation() {
         Radio change = new Radio();
 

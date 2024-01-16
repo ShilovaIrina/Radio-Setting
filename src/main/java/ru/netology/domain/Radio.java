@@ -18,6 +18,18 @@ public class Radio {
         currentVolume = newVolume;
     }
 
+    public void MinusVolume() {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
+        }
+    }
+
+    public void PlusVolume() {
+        if (currentVolume < 100) {
+            currentVolume = currentVolume + 1;
+        }
+    }
+
     public int getCurrentRadioStation() {
         return currentStation;
     }
