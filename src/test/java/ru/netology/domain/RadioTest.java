@@ -47,7 +47,7 @@ public class RadioTest {
         Radio change = new Radio();
 
         change.setCurrentVolume(10);
-        change.MinusVolume();
+        change.minusVolume();
 
         int expected = 9;
         int actual = change.getCurrentVolume();
@@ -60,7 +60,7 @@ public class RadioTest {
         Radio change = new Radio();
 
         change.setCurrentVolume(-1);
-        change.MinusVolume();
+        change.minusVolume();
 
         int expected = 0;
         int actual = change.getCurrentVolume();
@@ -74,7 +74,7 @@ public class RadioTest {
         Radio change = new Radio();
 
         change.setCurrentVolume(20);
-        change.PlusVolume();
+        change.plusVolume();
 
         int expected = 21;
         int actual = change.getCurrentVolume();
@@ -86,10 +86,11 @@ public class RadioTest {
     public void shouldPlusVolumeSecond() {
         Radio change = new Radio();
 
-        change.currentVolume = 101;
-        change.PlusVolume();
+        change.setCurrentVolume(99);
+        change.plusVolume();
+        change.plusVolume();
 
-        int expected = 101;
+        int expected = 100;
         int actual = change.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -136,7 +137,7 @@ public class RadioTest {
         Radio change = new Radio();
 
         change.setCurrentRadioStation(5);
-        change.NextStation();
+        change.nextStation();
 
         int expected = 6;
         int actual = change.getCurrentRadioStation();
@@ -149,7 +150,7 @@ public class RadioTest {
         Radio change = new Radio();
 
         change.setCurrentRadioStation(9);
-        change.NextStation();
+        change.nextStation();
 
         int expected = 0;
         int actual = change.getCurrentRadioStation();
@@ -162,7 +163,7 @@ public class RadioTest {
         Radio change = new Radio();
 
         change.setCurrentRadioStation(5);
-        change.PrevStation();
+        change.prevStation();
 
         int expected = 4;
         int actual = change.getCurrentRadioStation();
@@ -175,7 +176,7 @@ public class RadioTest {
         Radio change = new Radio();
 
         change.setCurrentRadioStation(0);
-        change.PrevStation();
+        change.prevStation();
 
         int expected = 9;
         int actual = change.getCurrentRadioStation();
