@@ -7,9 +7,10 @@ public class RadioTest {
     Radio change = new Radio();
 
     @Test
-    public void theRadioStations(){
+    public void theRadioStations() {
         Assertions.assertEquals( 10, change.getStations());
     }
+    
     @Test
     public void shouldNotSetVolumeAboveMax() {
 
