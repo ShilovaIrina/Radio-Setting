@@ -4,10 +4,15 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
+    Radio change = new Radio();
 
     @Test
+    public void theRadioStations(){
+        Assertions.assertEquals( 10, change.getStations());
+    }
+    @Test
     public void shouldNotSetVolumeAboveMax() {
-        Radio change = new Radio();
+
 
         change.setCurrentVolume(101);
 
@@ -19,7 +24,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetVolumeBelowMin() {
-        Radio change = new Radio();
+
 
         change.setCurrentVolume(-1);
 
@@ -31,7 +36,7 @@ public class RadioTest {
 
     @Test
     public void shouldVolumeCommon() {
-        Radio change = new Radio();
+
 
         change.setCurrentVolume(50);
 
@@ -44,7 +49,7 @@ public class RadioTest {
 
     @Test
     public void shouldMinusVolume() {
-        Radio change = new Radio();
+
 
         change.setCurrentVolume(10);
         change.minusVolume();
@@ -57,7 +62,7 @@ public class RadioTest {
 
     @Test
     public void shouldMinusVolumeSecond() {
-        Radio change = new Radio();
+
 
         change.setCurrentVolume(-1);
         change.minusVolume();
@@ -71,7 +76,7 @@ public class RadioTest {
 
     @Test
     public void shouldPlusVolume() {
-        Radio change = new Radio();
+
 
         change.setCurrentVolume(20);
         change.plusVolume();
@@ -84,7 +89,7 @@ public class RadioTest {
 
     @Test
     public void shouldPlusVolumeSecond() {
-        Radio change = new Radio();
+
 
         change.setCurrentVolume(99);
         change.plusVolume();
@@ -98,7 +103,7 @@ public class RadioTest {
 
     @Test
     public void shouldChoiceStation() {
-        Radio change = new Radio();
+
 
         change.setCurrentRadioStation(5);
 
@@ -110,7 +115,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetStationBelowMin() {
-        Radio change = new Radio();
+
 
         change.setCurrentRadioStation(-1);
 
@@ -122,7 +127,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetStationAboveMax() {
-        Radio change = new Radio();
+
 
         change.setCurrentRadioStation(10);
 
@@ -134,7 +139,7 @@ public class RadioTest {
 
     @Test
     public void shouldNextStation() {
-        Radio change = new Radio();
+
 
         change.setCurrentRadioStation(5);
         change.nextStation();
@@ -147,7 +152,7 @@ public class RadioTest {
 
     @Test
     public void shouldNextStationSecond() {
-        Radio change = new Radio();
+
 
         change.setCurrentRadioStation(9);
         change.nextStation();
@@ -160,7 +165,7 @@ public class RadioTest {
 
     @Test
     public void shouldPrevStation() {
-        Radio change = new Radio();
+
 
         change.setCurrentRadioStation(5);
         change.prevStation();
@@ -173,7 +178,7 @@ public class RadioTest {
 
     @Test
     public void shouldPrevStationSecond() {
-        Radio change = new Radio();
+
 
         change.setCurrentRadioStation(0);
         change.prevStation();
